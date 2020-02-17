@@ -7,7 +7,7 @@ SELECT Production.Location.Name, Production.Location.CostRate,
 Production.Location.Availability, Production.Document.Title, Production.Document.FileName,
 Person.Person.FirstName, Person.Person.LastName
 FROM Production.Location
-LEFT JOIN Production.Document ON Production.Location.LocationID = Production.Document.DocumentType
+LEFT JOIN Production.Document ON Production.Location.LocationID = Production.Document.DocumentLevel
 LEFT JOIN Person.Person ON Production.Location.LocationID = Person.Person.BusinessEntityID
 WHERE CostRate >= ISNULL(@CostRate,CostRate)
 AND Availability >= ISNULL(@Availability,Availability)
