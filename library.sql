@@ -363,7 +363,7 @@ GO
 
 /*** For each book authored (or co-authored) by "Stephen King", retrieve the title and
 the number of copies owned by the library branch whose name is "Central". ***/
-ALTER PROCEDURE dbo.uspStephenKingCentral
+CREATE PROCEDURE dbo.uspStephenKingCentral
 AS
 SELECT books.Title, book_authors.AuthorName, book_copies.Number_Of_Copies, library_branch.BranchName
 FROM books
